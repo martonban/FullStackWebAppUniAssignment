@@ -1,20 +1,35 @@
 import { AppDataSource } from "./data-source"
-import { User } from "./entity/User"
+// "esModuleInterop": true, a serveren belüli tsconfig-ba
+import express from 'express';
+import { getRouter } from "./router";
 
-AppDataSource.initialize().then(async () => {
 
-    console.log("Inserting a new user into the database...")
-    const user = new User()
-    user.firstName = "Timber"
-    user.lastName = "Saw"
-    user.age = 25
-    await AppDataSource.manager.save(user)
-    console.log("Saved a new user with id: " + user.id)
+async function main() {
+  try {
+    // Vezérlésnek addig dokkolódni kell amíg nem tré vissza valamivel a függvényünk.
+    await AppDataSource.initialize();
 
-    console.log("Loading users from the database...")
-    const users = await AppDataSource.manager.find(User)
-    console.log("Loaded users: ", users)
+    // Express server létrehozása
+    const app = express();
 
-    console.log("Here you can setup and run express / fastify / any other framework.")
 
-}).catch(error => console.log(error))
+    // Ő csinál mindennből json-t MINIDG
+    app.use(express.json());
+
+
+    // Routers megadás
+
+    app.use('/api', getRouter());
+
+
+    // Server elindítása
+    app.listen(3000, () => {
+      console.log("Listening on port 3000...");
+    });
+
+  }catch (err) {
+    console.error(err);
+  }
+}
+
+main();
