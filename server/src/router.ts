@@ -6,7 +6,7 @@ export function getRouter() {
 
   const userController = new Controller;
 
-  router.get('/user', userController.getAll);
+  router.get('/users', userController.getAll);
   router.get('/user/:id', userController.getOne);
   router.post('/user', userController.create);
   router.put('/user', userController.update);

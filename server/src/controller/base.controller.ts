@@ -15,7 +15,13 @@ export class Controller {
 
   getOne = async(req, res) => {
     try {
-      // TODO
+      const id = req.params.id;
+      const entity = await this.repository.findOneBy({id: id});
+
+      if(!entity) {
+        return this.handleError(res, null, 404, 'Entity is not found.');
+      }
+      res.json(entity);
     } catch(err) {
       this.handleError(res, err);
     }
@@ -23,7 +29,11 @@ export class Controller {
 
   create = async(req, res) => {
     try {
-      // TODO
+      const entity = this.repository.create(req.body as object);
+      delete entity.id;
+
+      const entityInserted =  await this.repository.save(entity);
+      res.json(entityInserted);
     } catch(err) {
       this.handleError(res, err);
     }
