@@ -41,7 +41,15 @@ export class Controller {
 
   update = async(req, res) => {
     try {
-      // TODO
+      const entity = this.repository.create(req.body as object);
+
+      const currentEntity = await this.repository.findOneBy({id: entity.id});
+      if(!currentEntity) {
+        return this.handleError(res, null, 404, 'Entity is not found.');
+      }
+
+      await this.repository.save(entity);
+      res.json(entity);
     } catch(err) {
       this.handleError(res, err);
     }
@@ -49,7 +57,15 @@ export class Controller {
 
   delete = async(req, res) => {
     try {
-      // TODO
+      const id = req.params.id;
+      const entity = await this.repository.findOneBy({id: id});
+
+      if(!entity) {
+        return this.handleError(res, null, 404, 'Entity is not found.');
+      }
+
+      await this.repository.remove(entity);
+      res.send();
     } catch(err) {
       this.handleError(res, err);
     }
