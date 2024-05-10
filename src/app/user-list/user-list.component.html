@@ -1,1 +1,23 @@
-<p>user-list works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birthday</th>
+            <th>TAJ Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(user of users; track $index) {
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.birthDay}}</td>
+                <td>{{user.tajNumber}}</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
