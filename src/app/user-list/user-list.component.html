@@ -6,6 +6,7 @@
             <th>Last Name</th>
             <th>Birthday</th>
             <th>TAJ Number</th>
+            <th>Műveletek</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,9 @@
                 <td>{{user.lastName}}</td>
                 <td>{{user.birthDay}}</td>
                 <td>{{user.tajNumber}}</td>
+                <td>
+                    <button class="btn btn-outline-primary" (click)="goToUserForm(user.id)">Módosítás</button>
+                </td>
             </tr>
         }
     </tbody>
