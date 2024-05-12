@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './visit-start.component.html',
   styleUrl: './visit-start.component.css'
 })
+
 export class VisitStartComponent {
 
 }
