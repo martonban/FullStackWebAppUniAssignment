@@ -1,7 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
+import { UserDTO } from "../../../models"
+import { Visit } from "./Visit"
 
 @Entity()
-export class User {
+export class User implements UserDTO {
 
     @PrimaryGeneratedColumn()
     id: number
@@ -17,5 +19,8 @@ export class User {
 
     @Column()
     tajNumber: number
+
+    @OneToMany(() => Visit, (visit) => visit.patient)
+    allVisits: Visit[];
 
 }

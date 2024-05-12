@@ -5,3 +5,11 @@ export interface UserDTO {
     birthDay: Date;
     tajNumber: number;
 }
+
+export interface VisitDTO {
+    id: number;
+    patient: UserDTO | null;
+    diagnosis: string;
+    medicine: string;
+    results: string;
+}
