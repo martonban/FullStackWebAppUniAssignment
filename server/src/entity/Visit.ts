@@ -7,7 +7,7 @@ export class Visit implements VisitDTO {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @ManyToOne(() => User, (user) => user.allVisits)
+    @ManyToOne(() => User, (user) => user.allVisits, {eager: true})
     patient: UserDTO;
 
     @Column()
@@ -18,5 +18,4 @@ export class Visit implements VisitDTO {
     
     @Column()
     results: string;
-
 } 
