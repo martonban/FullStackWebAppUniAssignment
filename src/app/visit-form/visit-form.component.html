@@ -2,7 +2,7 @@
     <div class="col-md-6">
         <form [formGroup]="visitForm">
             <div class="mb-3">
-                <label for="patient" class="form-label">Küldő</label>
+                <label for="patient" class="form-label">Páciens</label>
                 <select class="form-select" id="patient" formControlName="patient">
                     @for (user of users; track $index) {
                         <option [ngValue]="{id: user.id}">{{user.tajNumber}}</option>
