@@ -1,1 +1,27 @@
-<p>visit-form works!</p>
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="visitForm">
+            <div class="mb-3">
+                <label for="patient" class="form-label">Küldő</label>
+                <select class="form-select" id="patient" formControlName="patient">
+                    @for (user of users; track $index) {
+                        <option [ngValue]="{id: user.id}">{{user.tajNumber}}</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="diagnosis" class="form-label">Diganózis:</label>
+                <input type="text" class="form-control" id="diagnosis" formControlName="diagnosis">
+            </div>
+            <div class="mb-3">
+                <label for="medicine" class="form-label">Gyógyszer:</label>
+                <input type="text" class="form-control" id="medicine" formControlName="medicine">
+            </div>
+            <div class="mb-3">
+                <label for="results" class="form-label">Lelet:</label>
+                <input type="text" class="form-control" id="results" formControlName="results">
+            </div>
+        </form>
+        <button class="btn btn-outline-primary" (click)="createVisit()">Küldés</button>
+    </div>
+</div>

@@ -24,10 +24,6 @@ export const routes: Routes = [
     },
     {
         path: 'visit',
-        component: VisitStartComponent
-    },
-    {
-        path: 'visit/:tajNumber',
         component: VisitFormComponent
     }
 ];
