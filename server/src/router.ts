@@ -12,6 +12,7 @@ export function getRouter() {
   router.post('/user', userController.create);
   router.put('/user', userController.update);
   router.delete('/user/:id', userController.delete);
+  router.get('/users/needleFilter', userController.getNeedleFilter);
 
   const visitController = new VisitController();
 
