@@ -20,4 +20,9 @@ export class VisitService {
   create(visit: VisitDTO) {
     return this.http.post<VisitDTO>('/api/visit', visit);
   }
+
+  visitOfUser(tajNumber: number) {
+    return this.http.get<VisitDTO[]>('/api/visit/' + tajNumber);
+  }
+
 }

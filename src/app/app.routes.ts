@@ -32,7 +32,7 @@ export const routes: Routes = [
         component: PatientHistoryStartComponent
     },
     {
-        path: 'patient-history/:id',
+        path: 'patient-history/:tajNumber',
         component: PatientHistoryComponent
     }
 ];

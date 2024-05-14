@@ -17,6 +17,7 @@ export function getRouter() {
 
   router.get('/visit', visitController.getAll);
   router.post('/visit', visitController.create);
+  router.get('/visit/:tajNumber', visitController.visitOfUser)
 
   return router;
 }

@@ -1,1 +1,22 @@
-<p>patient-history works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Beteg TAJ Száma</th>
+            <th>Diagnózis</th>
+            <th>Gyógyszer</th>
+            <th>Lelet</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(visit of visits; track $index) {
+            <tr>
+                <td>{{visit.id}}</td>
+                <td>{{visit.patient?.tajNumber}}</td>
+                <td>{{visit.diagnosis}}</td>
+                <td>{{visit.medicine}}</td>
+                <td>{{visit.results}}</td>
+            </tr>
+        }
+    </tbody>
+</table>

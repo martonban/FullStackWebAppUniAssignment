@@ -16,4 +16,18 @@ export class VisitController extends Controller {
           this.handleError(res, err);
         }
     };
+
+    visitOfUser = async(req, res) => {
+      try{
+          const tajNumber = req.params.tajNumber;
+          const visits = await this.repository.find({
+              where: {
+                patient: {tajNumber: tajNumber}
+              }
+          });
+          res.json(visits);
+      } catch(err) {
+          this.handleError(res, err);
+      }
+    }
 }
