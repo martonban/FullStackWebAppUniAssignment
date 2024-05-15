@@ -5,7 +5,7 @@
                 <label for="patient" class="form-label">Páciens</label>
                 <select class="form-select" id="patient" formControlName="patient">
                     @for (user of users; track $index) {
-                        <option [ngValue]="{id: user.id}">{{user.tajNumber}}</option>
+                        <option [ngValue]="{id: user.id}">{{user.tajNumber}} - {{user.lastName}} {{user.firstName}}</option>
                     }
                 </select>
             </div>
