@@ -5,6 +5,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { VisitFormComponent } from './visit-form/visit-form.component';
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
 import { PatientHistoryStartComponent } from './patient-history-start/patient-history-start.component';
+import { ScreeningTestStartComponent } from './screening-test-start/screening-test-start.component';
 
 export const routes: Routes = [
     {
@@ -34,5 +35,23 @@ export const routes: Routes = [
     {
         path: 'patient-history/:tajNumber',
         component: PatientHistoryComponent
+    },
+    {
+        path: 'screening',
+        component: ScreeningTestStartComponent
     }
+    /*,
+    {
+        path: 'screening/needleFilter',
+        component: ScreeningTestComponent
+    },
+    {
+        path: 'screening/prostateExamination',
+        component: ScreeningTestComponent
+    },
+    {
+        path: 'screening/mammographicExamination',
+        component: ScreeningTestComponent
+    }
+    */
 ];
