@@ -20,4 +20,36 @@ export class UserController extends Controller {
             this.handleError(res, err);
         }
     }
+
+    getProstateExamination = async(req, res) => {
+        var today = new Date();
+        var yearsAgo = new Date(today.getFullYear() - 35, today.getMonth(), today.getDate());
+        try {
+            const users = await this.repository.find({
+                where: {
+                    birthDay: LessThan(yearsAgo),
+                    // gender: gender = 'male',
+                },
+            });
+            res.json(users);
+        } catch(err) {
+            this.handleError(res, err);
+        }
+    }
+
+    getMammographicExamination = async(req, res) => {
+        var today = new Date();
+        var yearsAgo = new Date(today.getFullYear() - 45, today.getMonth(), today.getDate());
+        try {
+            const users = await this.repository.find({
+                where: {
+                    birthDay: LessThan(yearsAgo),
+                    // gender: gender = 'female',
+                },
+            });
+            res.json(users);
+        } catch(err) {
+            this.handleError(res, err);
+        }
+    }
 }

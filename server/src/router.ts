@@ -13,6 +13,10 @@ export function getRouter() {
   router.put('/user', userController.update);
   router.delete('/user/:id', userController.delete);
   router.get('/users/needleFilter', userController.getNeedleFilter);
+  router.get('/users/prostateExamination', userController.getProstateExamination);
+  router.get('/users/mammographicExamination', userController.getMammographicExamination);
+
+
 
   const visitController = new VisitController();
 
