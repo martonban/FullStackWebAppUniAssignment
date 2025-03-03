@@ -1,6 +1,16 @@
-# Hospital
+# Full Stack Web Application 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+This project was an assignment at the university. I had to develop a hospital record-keeping web application using Angular, Bootstrap, and Node.js.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.<br>
+
+- Status: Unfinished
+- Quality: Low
+
+
+# Screenshots
+![Képernyőkép 2025-03-03 151425](https://github.com/user-attachments/assets/efad3052-473d-4a3b-b695-bee14797691c)<br><br>
+![Képernyőkép 2025-03-03 151504](https://github.com/user-attachments/assets/ef138b46-be70-4fec-a5c7-276b8df10403)
+
 
 ## Development server
 
